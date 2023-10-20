@@ -16,7 +16,7 @@ pub struct Stack<T> {
     top: Option<Box<StackNode<T>>>,
 }
 
-impl<T: Clone> Stack<T> {
+impl<T> Stack<T> {
     pub fn new() -> Self {
         Self { top: None }
     }

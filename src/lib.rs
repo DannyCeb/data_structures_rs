@@ -1,5 +1,5 @@
+mod list;
 mod stack;
-
 #[cfg(test)]
 mod tests {
     use crate::stack::Stack;
@@ -14,6 +14,7 @@ mod tests {
         assert_eq!(st.pop_data().unwrap(), "Arv".to_string());
         assert_eq!(st.pop_data().unwrap(), "Ceb".to_string());
         assert_eq!(st.pop_data().unwrap(), "Danny".to_string());
+        assert_eq!(st.pop_data(), None);
         assert_eq!(st.pop_data(), None);
     }
 }
