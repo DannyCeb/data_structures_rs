@@ -1,9 +1,9 @@
-struct StackNode<T: Clone> {
+struct StackNode<T> {
     data: T,
     previous_node: Option<Box<StackNode<T>>>,
 }
 
-impl<T: Clone> StackNode<T> {
+impl<T> StackNode<T> {
     fn new(data: T, previous_node: Option<Box<StackNode<T>>>) -> Self {
         Self {
             data,
@@ -12,7 +12,7 @@ impl<T: Clone> StackNode<T> {
     }
 }
 
-pub struct Stack<T: Clone> {
+pub struct Stack<T> {
     top: Option<Box<StackNode<T>>>,
 }
 
@@ -22,7 +22,7 @@ impl<T: Clone> Stack<T> {
     }
 
     pub fn insert_data(&mut self, data: T) {
-        let new_node = Box::new(StackNode::new(data.clone(), self.top.take()));
+        let new_node = Box::new(StackNode::new(data, self.top.take()));
         self.top = Some(new_node);
     }
 
