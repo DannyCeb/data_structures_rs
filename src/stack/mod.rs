@@ -1,11 +1,9 @@
-use std::fmt::Display;
-
-struct StackNode<T: Clone + Display> {
+struct StackNode<T: Clone> {
     data: T,
     previous_node: Option<Box<StackNode<T>>>,
 }
 
-impl<T: Clone + Display> StackNode<T> {
+impl<T: Clone> StackNode<T> {
     fn new(data: T, previous_node: Option<Box<StackNode<T>>>) -> Self {
         Self {
             data,
@@ -14,11 +12,11 @@ impl<T: Clone + Display> StackNode<T> {
     }
 }
 
-pub struct Stack<T: Clone + Display> {
+pub struct Stack<T: Clone> {
     top: Option<Box<StackNode<T>>>,
 }
 
-impl<T: Clone + Display> Stack<T> {
+impl<T: Clone> Stack<T> {
     pub fn new() -> Self {
         Self { top: None }
     }
